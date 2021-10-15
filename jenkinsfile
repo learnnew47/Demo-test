@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'mvn -f pom.xml clean package'
+                sh 'cp /var/lib/jenkins/workspace/Maven project/target/docker-demo.jar'
             }
  
         Stage('Create Tomcat Docker Image'){
