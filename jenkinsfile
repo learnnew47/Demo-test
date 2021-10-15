@@ -1,11 +1,16 @@
 pipeline {
     agent any
     stages {
+            stage('SCM Checkout') {
+            steps {
+                git branch: "master", url: "https://github.com/learnnew47/springbootapp.git"
+            }
+          }  
         stage('Build Application') {
             steps {
                 sh 'cp /var/lib/jenkins/workspace/Maven project/target/docker-demo.jar'
             }
- 
+          }
         Stage('Create Tomcat Docker Image'){
             steps {
                 sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
