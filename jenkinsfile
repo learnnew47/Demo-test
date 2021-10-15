@@ -8,7 +8,7 @@ pipeline {
           }  
         stage('Build Application') {
             steps {
-                sh 'cp /var/lib/jenkins/workspace/Maven project/target/docker-demo.jar'
+                sh 'cp /var/lib/jenkins/workspace/Mavenproject/target/docker-demo.jar'
             }
           }
         Stage('Create Tomcat Docker Image'){
